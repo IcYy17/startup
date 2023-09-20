@@ -8,7 +8,7 @@ Buying fancy new sneakers from nike can cost you upwards of $200. With BRS you w
 
 ### Design
 
-![Mock]("![Alt text](startup_design.png)")
+![Mock](startup_design.png)
 
 Here is depiction of our online market-place!
 ### Key features
