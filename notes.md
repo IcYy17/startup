@@ -1,3 +1,9 @@
 leanring how to push and pull code from GitHub
 
-these are the changes i made on vs code.
+
+./deployFiles.sh -k <yourpemkey> -h <yourdomain> -s simon
+
+For example,
+
+./deployFiles.sh -k ~/keys/production.pem -h yourdomain.click -s simon
+
