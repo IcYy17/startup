@@ -38,12 +38,12 @@ These are the technologies I will be using.
 
 For this deliverable I built out the structure of my application using HTML.
 
-- **HTML pages** - Three HTML page that represent the ability to login, surf, checkout.
-- **Links** - The login page automatically links to the surf page. 
-- **Text** - Each of the shoes has a description
-- **Images** - images of the shoes
+- **HTML pages** - I have 4 HTML page that represent the ability to login/welcome page, surf the top shoes, shop all shoes and an about page to learn about tahe origin of BRS.
+- **Links** - The login/welcome page automatically links to all pages and all pages are linked together. 
+- **Text** - Each page has a header and there is an about page that describes everything we do at BRS.
+- **Images** - images of the shoes on all pages to view.
 - **Login** - Input box and submit button for login.
-- **Database** - The prices indicate real fluxuating market prices
+- **Database** - The prices indicate real fluxuating market prices (this is tbd and has not been implemented yet)
 
 
 ## CSS deliverable
