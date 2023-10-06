@@ -34,6 +34,7 @@ These are the technologies I will be using.
 - **Login** - Register and login users. Credentials securely stored in database. 
 - **WebSocket** - As each user browses, shoe prices update when a user selects it. 
 - **React** - Application ported to use the React web framework.
+
 ## HTML deliverable
 
 For this deliverable I built out the structure of my application using HTML.
@@ -50,11 +51,11 @@ For this deliverable I built out the structure of my application using HTML.
 
 For this deliverable I will style the project
 
-- **Header, footer, and main content body**
-- **Navigation elements** - used on images 
-- **Responsive to window resizing** - My app looks great on all window sizes and devices
-- **Application text content** - Consistent fonts, fun to look at.
-- **Application images** - high quality borders around my images. 
+- **Header, footer, and main content body** - I styled my site to look monochrome and be easily navigated throught the header menu.
+- **Navigation elements** - used the header and flex spacing to create a good looking menu at the top. 
+- **Responsive to window resizing** - My app looks great on all window sizes and devices. It uses flex to modify well to everything. 
+- **Application text content** - Consistent fonts, aesthetically pleasing to look at the site with the colors.
+- **Application images** - correctly displays images under text and corrects width and height mistakes. 
 
 ## JavaScript deliverable
 
