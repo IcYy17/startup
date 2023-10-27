@@ -9,25 +9,25 @@
     <link rel="icon" href="shoe icon.png" />
   </head>
   <body>
-    <!-- Use header, main, and footer elements to give semantic structure -->
+    
     <header>
       <h1>Shop<sup>&reg;</sup></h1>
 
       <!-- Navigation elements -->
       <nav>
-        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        
           <menu>
             <li><a href="index.html">Home</a></li>
             <li><a href="shop.html">Shop</a></li>
-            
             <li><a href="about.html">About</a></li>
           </menu>
       </nav>
 
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
       <hr />
       <div id="shopping-cart-icon">
-        <a href="cart.html"><img src="cart.png" alt="Shopping Cart" width="50" height="50"/></a>
+        <a href="cart.html"><img src="cart.png" alt="Shopping Cart" width="50" height="50"/>
+          </a>
+          <p id="cart-count">0</p>
       </div>
     </header>
 
@@ -37,6 +37,7 @@
       <p> Travis Scott Nike SB Dunks</p>
       <p>Price: $170</p>
       <button class="add-to-cart">Add to Cart</button>
+      <button class="remove-from-cart">Remove from Cart</button>
       </div>
 
       <div class="product">
@@ -44,6 +45,7 @@
       <p>Travid Scott Reverse Mochas</p>
     <p>Price: $170</p>
     <button class="add-to-cart">Add to Cart</button>
+    <button class="remove-from-cart">Remove from Cart</button>
     </div>
 
     </main>
@@ -54,5 +56,6 @@
       <br />
       <a href="https://github.com/IcYy17/startup">GitHub</a>
     </footer>
+    <script src="shop.js"></script>
   </body>
 </html>

@@ -37,6 +37,38 @@ nav menu {
     gap: 20px;
 }
 
+/* Style the shopping cart icon and counter */
+#shopping-cart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  #shopping-cart-icon img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  #cart-count {
+    background-color: #0074d9; 
+    color: #fff; 
+    border-radius: 50%; 
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0px; 
+    right: 0px; 
+    font-weight: bold;
+  }
+
 menu a {
     text-decoration: none;
     color: #333;
@@ -58,24 +90,24 @@ main img {
     margin-bottom: 10px;
 }
 
-/* Style product containers */
+
 .product {
     border: 1px solid #ccc;
     background-color: #fff;
     padding: 20px;
     text-align: center;
     width: 300px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
   }
   
-  /* Style product images */
+ 
   .product img {
     width: 100%;
     height: auto;
-    border: 1px solid #ddd; /* Add a border around images */
+    border: 1px solid #ddd; 
   }
   
-  /* Style "Add to Cart" buttons */
+
   .add-to-cart {
     background-color: #0074d9;
     color: #fff;
@@ -83,15 +115,28 @@ main img {
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 10px;
-    border-radius: 5px; /* Add rounded corners to the button */
-    transition: background-color 0.3s; /* Add a hover effect */
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
   }
   
+  .remove-from-cart {
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+  }
+  .remove-from-cart:hover {
+    background-color: #0056a7;
+  }
   .add-to-cart:hover {
     background-color: #0056a7;
   }
   
-  /* Style product paragraphs */
+ 
   .product p {
     font-size: 18px;
     color: #333;
