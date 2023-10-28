@@ -61,7 +61,8 @@ For this deliverable I will style the project
 
 - **login** - When you press enter or the login button it takes you to the market-place.
 - **cart** - Adding and removing shoes from the cart
-  
+- **shoe logic** - Adding and removing shoes button is independent per shoe and cannot remove a shoe that is not in cart.
+
 ## Service deliverable
 
 For this deliverable I added backend endpoints that receives votes and returns the voting totals.
