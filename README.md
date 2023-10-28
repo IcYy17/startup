@@ -60,8 +60,8 @@ For this deliverable I will style the project
 ## JavaScript deliverable
 
 - **login** - When you press enter or the login button it takes you to the market-place.
-- **database** - prices for shoes is held
-
+- **cart** - Adding and removing shoes from the cart
+  
 ## Service deliverable
 
 For this deliverable I added backend endpoints that receives votes and returns the voting totals.
