@@ -1,0 +1,6 @@
+{
+    "shoes": [
+      { "name": "Shoe A", "price": 170 },
+      { "name": "Shoe B", "price": 170 }
+    ]
+  }

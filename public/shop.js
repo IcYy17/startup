@@ -44,3 +44,18 @@ removeButtons.forEach((button) => {
     removeFromCart(productName);
   });
 });
+
+// make request to backend api for shoe price and then displaying them on page. 
+async function fetchShoePrices() {
+  try {
+    
+    const response = await fetch('/api/shoe-prices');
+    const data = await response.json();
+
+    // Display the prices on the webpage
+    document.getElementById('shoePrices').innerText = JSON.stringify(data, null, 2);
+  } catch (error) {
+    console.error('Error fetching shoe prices:', error);
+    document.getElementById('shoePrices').innerText = 'Error fetching shoe prices';
+  }
+}
