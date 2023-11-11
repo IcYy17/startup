@@ -60,13 +60,12 @@ For this deliverable I will style the project
 ## JavaScript deliverable
 
 - **login** - When you press enter or the login button it takes you to the market-place.
-- **database** - prices for shoes is held
+- **cart** - Adding and removing shoes from the cart
+- **shoe logic** - Adding and removing shoes button is independent per shoe and cannot remove a shoe that is not in cart.
 
 ## Service deliverable
-
-For this deliverable I added backend endpoints that receives votes and returns the voting totals.
-
-- **Backend service endpoints** - Placeholders for login that stores the current user on the server. Also updates the shoe pricing.
+- **Frontend Service** - Added function to GET call for my shoe prices.
+- **Backend service endpoints** - Added backend api call to update shoe prices. 
 
 ## DB deliverable
 
