@@ -69,7 +69,7 @@ For this deliverable I will style the project
 
 ## DB deliverable
 
-For this deliverable I will store shoe prices in the DB. 
+I added api functions to add, delete, update and pull info on shoes to my database using mongoDB.  
 
 ## Login deliverable
 
