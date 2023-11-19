@@ -1,7 +1,137 @@
-const express = require('express');
-const app = express();
+// const cookieParser = require('cookie-parser');
+// const bcrypt = require('bcrypt');
+// const express = require('express');
+// const app = express();
+// const DB = require('./database.js');
 
-// The service port. In production the frontend code is statically hosted by the service on the same port.
+// const authCookieName = 'token';
+
+// // The service port may be set on the command line
+// const port = process.argv.length > 2 ? process.argv[2] : 3000;
+
+// // JSON body parsing using built-in middleware
+// app.use(express.json());
+
+// // Use the cookie parser middleware for tracking authentication tokens
+// app.use(cookieParser());
+
+// // Serve up the applications static content
+// app.use(express.static('public'));
+
+// // Trust headers that are forwarded from the proxy so we can determine IP addresses
+// app.set('trust proxy', true);
+
+// // Router for service endpoints
+// var apiRouter = express.Router();
+// app.use(`/api`, apiRouter);
+
+
+// // gets shoe price and sends to front end
+// app.get('/api/shoe-prices', async (_req, res) => {
+//     try {
+      
+//       const pricesData = await fs.readFile('shoe-prices.json', 'utf-8');
+//       const prices = JSON.parse(pricesData);
+  
+//       res.json(prices);
+//     } catch (error) {
+//       console.error('Error reading shoe prices:', error);
+//       res.status(500).json({ error: 'Internal Server Error' });
+//     }
+//   });
+
+
+// // CreateAuth token for a new user
+// apiRouter.post('/auth/create', async (req, res) => {
+//   if (await DB.getUser(req.body.email)) {
+//     res.status(409).send({ msg: 'Existing user' });
+//   } else {
+//     const user = await DB.createUser(req.body.email, req.body.password);
+
+//     // Set the cookie
+//     setAuthCookie(res, user.token);
+
+//     res.send({
+//       id: user._id,
+//     });
+//   }
+// });
+
+// // GetAuth token for the provided credentials
+// apiRouter.post('/auth/login', async (req, res) => {
+//   const user = await DB.getUser(req.body.email);
+//   if (user) {
+//     if (await bcrypt.compare(req.body.password, user.password)) {
+//       setAuthCookie(res, user.token);
+//       res.send({ id: user._id });
+//       return;
+//     }
+//   }
+//   res.status(401).send({ msg: 'Unauthorized' });
+// });
+
+// // DeleteAuth token if stored in cookie
+// apiRouter.delete('/auth/logout', (_req, res) => {
+//   res.clearCookie(authCookieName);
+//   res.status(204).end();
+// });
+
+// // GetUser returns information about a user
+// apiRouter.get('/user/:email', async (req, res) => {
+//   const user = await DB.getUser(req.params.email);
+//   if (user) {
+//     const token = req?.cookies.token;
+//     res.send({ email: user.email, authenticated: token === user.token });
+//     return;
+//   }
+//   res.status(404).send({ msg: 'Unknown' });
+// });
+
+// // secureApiRouter verifies credentials for endpoints
+// var secureApiRouter = express.Router();
+// apiRouter.use(secureApiRouter);
+
+// secureApiRouter.use(async (req, res, next) => {
+//   authToken = req.cookies[authCookieName];
+//   const user = await DB.getUserByToken(authToken);
+//   if (user) {
+//     next();
+//   } else {
+//     res.status(401).send({ msg: 'Unauthorized' });
+//   }
+// });
+
+
+
+// // Default error handler
+// app.use(function (err, req, res, next) {
+//   res.status(500).send({ type: err.name, message: err.message });
+// });
+
+// // Return the application's default page if the path is unknown
+// app.use((_req, res) => {
+//   res.sendFile('index.html', { root: 'public' });
+// });
+
+// // setAuthCookie in the HTTP response
+// function setAuthCookie(res, authToken) {
+//   res.cookie(authCookieName, authToken, {
+//     secure: true,
+//     httpOnly: true,
+//     sameSite: 'strict',
+//   });
+// }
+
+// app.listen(port, () => {
+//   console.log(`Listening on port ${port}`);
+// });
+
+const express = require('express');
+const path = require('path');
+const fs = require('fs').promises;
+const DB = require('./database.js'); // Assuming mongoDB.js contains your database logic
+
+const app = express();
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
 // JSON body parsing using built-in middleware
@@ -12,44 +142,36 @@ app.use(express.static('public'));
 
 // Router for service endpoints
 const apiRouter = express.Router();
-app.use(`/api`, apiRouter);
-
-// // GetScores
-// apiRouter.get('/scores', (_req, res) => {
-//   res.send(scores);
-// });
+app.use('/api', apiRouter);
 
 // gets shoe price and sends to front end
 app.get('/api/shoe-prices', async (_req, res) => {
-  try {
-    
-    const pricesData = await fs.readFile('shoe-prices.json', 'utf-8');
-    const prices = JSON.parse(pricesData);
-
-    res.json(prices);
-  } catch (error) {
-    console.error('Error reading shoe prices:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
+    try {
+        const pricesData = await fs.readFile('shoe-prices.json', 'utf-8');
+        const prices = JSON.parse(pricesData);
+        res.json(prices);
+    } catch (error) {
+        console.error('Error reading shoe prices:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
 
-// // SubmitScore
-// apiRouter.post('/score', (req, res) => {
-//   scores = updateScores(req.body, scores);
-//   res.send(scores);
-// });
+// Additional API endpoints can be added here...
 
 // Return the application's default page if the path is unknown
-// app.use((_req, res) => {
-//   res.sendFile('index.html', { root: 'startup' });
-// });
-
 app.use((_req, res) => {
     const indexPath = path.join(__dirname, 'public', 'index.html');
     console.log(`Trying to send file: ${indexPath}`);
-    res.sendFile('index.html', { root: 'public' });
-  });
-
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+    res.sendFile(indexPath);
 });
+
+// Connect to MongoDB and start the server
+DB.connectToDatabase().then(() => {
+    app.listen(port, () => {
+        console.log(`Listening on port ${port}`);
+    });
+}).catch(error => {
+    console.error('Failed to connect to MongoDB:', error);
+    process.exit(1);
+});
+

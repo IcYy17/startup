@@ -105,6 +105,53 @@ main {
 .login-container button:hover {
     background-color: #0056a7;
 }
+/* Login Controls Styles */
+.login-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.input-group-text {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    flex-grow: 1; /* Ensures input field fills up the remaining space */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
 
 /* Footer styles */
 footer {

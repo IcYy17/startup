@@ -29,10 +29,22 @@
             <img src="shoe icon.png" alt="Travis SB Dunks" width="100" height="100">
             <p>Login to Shop Now!</p>
             
-                <label for="name"></label>
+                <!-- <label for="name"></label>
                 <input type="text" id="name" placeholder="Username" />
-                <button id="login-button" type="submit">Login</button>
-            
+                <button id="login-button" type="submit">Login</button> -->
+                <div id="loginControls" class="login-controls">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">@</span>
+                        <input class="form-control" type="text" id="userName" placeholder="your@email.com" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">🔒</span>
+                        <input class="form-control" type="password" id="userPassword" placeholder="password" />
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
+                    <button type="button" class="btn btn-primary" onclick="createUser()">Create</button>
+                </div>
+                
         </div>
     </main>
 
