@@ -31,7 +31,7 @@ async function loginOrCreate(endpoint) {
 
   if (response.ok) {
     localStorage.setItem('userName', userName);
-    window.location.href = 'play.html';
+    window.location.href = 'shop.html';
   } else {
     const body = await response.json();
     const modalEl = document.querySelector('#msgModal');
@@ -41,9 +41,9 @@ async function loginOrCreate(endpoint) {
   }
 }
 
-function play() {
-  window.location.href = 'play.html';
-}
+// function play() {
+//   window.location.href = 'play.html';
+// }
 
 function logout() {
   localStorage.removeItem('userName');
