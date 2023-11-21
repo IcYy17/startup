@@ -73,7 +73,7 @@ I added api functions to add, delete, update and pull info on shoes to my databa
 
 ## Login deliverable
 
-For this deliverable I associate the votes with the logged in user.
+Users can sign in and shop
 - **User registration** - Creates a new account in the database.
 
 
