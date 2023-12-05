@@ -130,6 +130,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs').promises;
 const DB = require('./database.js'); // Assuming mongoDB.js contains your database logic
+const { peerProxy } = require('./peerProxy.js');
 
 const app = express();
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -174,4 +175,6 @@ DB.connectToDatabase().then(() => {
     console.error('Failed to connect to MongoDB:', error);
     process.exit(1);
 });
+
+peerProxy(httpService);
 
