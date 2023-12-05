@@ -79,7 +79,7 @@ Users can sign in and shop
 
 ## WebSocket deliverable
 
-For this deliverable I will use webSocket to show updated prices 
+For this deliverable I used WebSocket to send a notification everytime someone added a shoe to their cart. It is an encouraging message to checkout before all the shoes are gone!
 
 ## React deliverable
 
